@@ -28,104 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.btnNewGame = new System.Windows.Forms.Button();
+            this.btnSnap = new System.Windows.Forms.Button();
+            this.btnLeaderBoard = new System.Windows.Forms.Button();
+            this.txtScore = new System.Windows.Forms.Label();
+            this.txtHighScore = new System.Windows.Forms.Label();
+            this.pctBoxGameArea = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGameArea)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnNewGame
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "New game";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNewGame.Location = new System.Drawing.Point(12, 12);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.Size = new System.Drawing.Size(117, 38);
+            this.btnNewGame.TabIndex = 0;
+            this.btnNewGame.Text = "New game";
+            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.StartGame);
             // 
-            // button2
+            // btnSnap
             // 
-            this.button2.Location = new System.Drawing.Point(479, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "SnapShot";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSnap.Location = new System.Drawing.Point(307, 12);
+            this.btnSnap.Name = "btnSnap";
+            this.btnSnap.Size = new System.Drawing.Size(117, 38);
+            this.btnSnap.TabIndex = 1;
+            this.btnSnap.Text = "SnapShot";
+            this.btnSnap.UseVisualStyleBackColor = true;
+            this.btnSnap.Click += new System.EventHandler(this.takeSnapShot);
             // 
-            // button3
+            // btnLeaderBoard
             // 
-            this.button3.Location = new System.Drawing.Point(244, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 38);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Leaderboard";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLeaderBoard.Location = new System.Drawing.Point(159, 12);
+            this.btnLeaderBoard.Name = "btnLeaderBoard";
+            this.btnLeaderBoard.Size = new System.Drawing.Size(117, 38);
+            this.btnLeaderBoard.TabIndex = 2;
+            this.btnLeaderBoard.Text = "Leaderboard";
+            this.btnLeaderBoard.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // txtScore
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Score: 3000";
+            this.txtScore.AutoSize = true;
+            this.txtScore.Location = new System.Drawing.Point(9, 67);
+            this.txtScore.Name = "txtScore";
+            this.txtScore.Size = new System.Drawing.Size(65, 13);
+            this.txtScore.TabIndex = 3;
+            this.txtScore.Text = "Score: 3000";
             // 
-            // label2
+            // txtHighScore
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(503, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "High Score:  3000";
+            this.txtHighScore.AutoSize = true;
+            this.txtHighScore.Location = new System.Drawing.Point(331, 67);
+            this.txtHighScore.Name = "txtHighScore";
+            this.txtHighScore.Size = new System.Drawing.Size(93, 13);
+            this.txtHighScore.TabIndex = 4;
+            this.txtHighScore.Text = "High Score:  3000";
             // 
-            // pictureBox1
+            // pctBoxGameArea
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 137);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(580, 580);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pctBoxGameArea.Location = new System.Drawing.Point(16, 83);
+            this.pctBoxGameArea.Name = "pctBoxGameArea";
+            this.pctBoxGameArea.Size = new System.Drawing.Size(408, 360);
+            this.pctBoxGameArea.TabIndex = 5;
+            this.pctBoxGameArea.TabStop = false;
+            this.pctBoxGameArea.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdatePictureBoxGraphics);
             // 
-            // label3
+            // timer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(642, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Best players:";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(605, 137);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(141, 576);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.timer.Interval = 40;
+            this.timer.Tick += new System.EventHandler(this.GameTimerEvent);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 725);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(440, 457);
+            this.Controls.Add(this.pctBoxGameArea);
+            this.Controls.Add(this.txtHighScore);
+            this.Controls.Add(this.txtScore);
+            this.Controls.Add(this.btnLeaderBoard);
+            this.Controls.Add(this.btnSnap);
+            this.Controls.Add(this.btnNewGame);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Snake by Marek(Raven)Kanok";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxGameArea)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,14 +123,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnNewGame;
+        private System.Windows.Forms.Button btnSnap;
+        private System.Windows.Forms.Button btnLeaderBoard;
+        private System.Windows.Forms.Label txtScore;
+        private System.Windows.Forms.Label txtHighScore;
+        private System.Windows.Forms.PictureBox pctBoxGameArea;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
